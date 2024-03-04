@@ -7,13 +7,13 @@ Este projeto tem como base simplificar a captação e tratamento de dados das Es
 Para executar o projeto, siga estas instruções de instalação:
 
 1. **Instalar Python**:
-   Certifique-se de ter o Python instalado em seu sistema. Você pode baixar a versão estável mais recente do Python [aqui](https://www.python.org/downloads/).
+   Certifique-se de ter o Python instalado em seu sistema. Você pode baixar a versão estável mais recente do Python [aqui](https://www.python.org/downloads/). Certifique de selecionar durante a instalação o checkBox de ADD PATH.
 
-2. **Instalar o gerenciador de pacotes PIP**:
-   O PIP é o gerenciador de pacotes padrão do Python. Execute o seguinte comando em seu terminal ou prompt de comando:
+2. **Atualizar Python**:
+   Será necessário atualizar o Python para que todos os pacotes do gerenciador de pacotes PIP sejam incluidos. Execute o seguinte comando em seu terminal ou prompt de comando:
 
    ```
-   python get-pip.py
+   python.exe -m pip install --upgrade pip
    ```
 
 3. **Instalar bibliotecas necessárias**:
