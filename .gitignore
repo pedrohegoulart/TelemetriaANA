@@ -1,0 +1,13 @@
+# Ignorar pastas
+__pycache__/
+build/
+dist/
+docs/
+outros/
+
+# Ignorar Arquivos
+
+
+
+# Ignorar arquivos de compilação
+*.o
