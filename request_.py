@@ -4,11 +4,13 @@ import xml.etree.ElementTree as ET
 import re
 
 # Funções externas
+from path_utils import pathFilesAdd
 from logger import *
+from convert import *
 from debug import *
 
 # Import Logs
-logger = Logger('logfile.log')
+logger = Logger(pathFilesAdd('logfile.log'))
 
 def request_xml(url):
     """ Função de requisição e tramento do returno XML"""

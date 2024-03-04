@@ -2,12 +2,11 @@
 import json
 from datetime import datetime
 import os
-
-# Funções externas
-from logger import *
+from path_utils import pathFilesAdd
 
 # Import Logs
-logger = Logger('logfile.log')
+from logger import *
+logger = Logger(pathFilesAdd('logfile.log'))
 
 def str2arr(string):
     """ Converte string para vetor """

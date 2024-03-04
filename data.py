@@ -6,6 +6,7 @@ import time
 import datetime
 
 # Funções externas
+from path_utils import pathFilesAdd
 from convert import *
 from db import *
 from logger import *
@@ -13,13 +14,13 @@ from request_ import *
 
 
 # Import Logs
-logger = Logger('logfile.log')
+logger = Logger(pathFilesAdd('logfile.log'))
 
 def telemetry(data_init, data_end, sql_enabled):
     """ Função para buscar dados no servidor MG e passar para .cvs e para o banco de dados"""
 
     # Abrir arquivo de configurações
-    data = writeJson("data.json")
+    data = writeJson(pathFilesAdd('data.json'))
     
     # Busca os dados no arquivo de configuração
     arrayStation = data.get("estacoes", "")
@@ -110,8 +111,8 @@ def dataErroTable(codEstacao, data_init, data_end):
         
         dataHora = start_datetime.strftime("%Y-%m-%d %H:%M:%S")
         dados.append({
-            'CodEstacao': codEstacao,
-            'DataHora': dataHora,
+            'CodEstacao': f'"{codEstacao}"',
+            'DataHora': f'"{dataHora}"',
             'Vazao': '""',
             'Nivel': '""',
             'Chuva': '""'

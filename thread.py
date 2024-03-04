@@ -66,7 +66,7 @@ class Threads:
             thread.join()
 
         # Limpa o arquivo de logs
-        open('logfile.log', 'w').close()
+        open(pathFilesAdd('logfile.log'), 'w').close()
 
         # Caso seja chamada pela função closeThread ira finalizar da janela e programa
         if root is not None:

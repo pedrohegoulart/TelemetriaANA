@@ -2,11 +2,12 @@
 import mysql.connector
 
 # Funções externas
+from path_utils import pathFilesAdd
 from convert import *
 from logger import *
 
 # Import Logs
-logger = Logger('logfile.log')
+logger = Logger(pathFilesAdd('logfile.log'))
 
 class Connect:
     """ Classe para manipular dados no banco de dados """

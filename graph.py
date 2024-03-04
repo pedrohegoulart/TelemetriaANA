@@ -12,6 +12,7 @@ from tkinter.ttk import Progressbar, Notebook
 from tkinter import messagebox, scrolledtext
 
 # Funções externas
+from path_utils import pathFilesAdd
 from data import *
 from convert import *
 from db import *
@@ -19,11 +20,11 @@ from logger import *
 from thread import *
 
 # Import Logs e Threads
-logger = Logger('logfile.log')
+logger = Logger(pathFilesAdd('logfile.log'))
 threads = Threads()
 
 # Abrir arquivo de configurações
-dataFile = writeJson("data.json")
+dataFile = writeJson(pathFilesAdd('data.json'))
 
 class window:
     """Classe que apresenta a janela grafica em python"""
@@ -34,8 +35,7 @@ class window:
         root.protocol("WM_DELETE_WINDOW", self.onClosing) 
         
         # Busca imagem do favicon
-        current_dir = os.path.dirname(__file__)
-        icon_path = os.path.join(current_dir, "img", "favicon.ico")
+        icon_path = pathFilesAdd("favicon.ico")
 
         root.title("Dados Hidrometeorologicos") #Titulo da Janela
         root.iconbitmap(icon_path) #Localização do icone
@@ -304,7 +304,7 @@ class wConfig:
     def load_data(self):
         """ Pega as informações no Json e carrega nos inputs"""
         try:
-            with open("data.json", "r") as file:
+            with open(pathFilesAdd('data.json'), "r") as file:
 
                 data = json.load(file) # abre o arquivo data.json
 
@@ -334,7 +334,7 @@ class wConfig:
         if messagebox.askokcancel("Fechar", "Tem certeza que deseja SALVAR as alterações?\nLembre-se de quando adicionar novos dados ou modificar salva-los!"):
             
             # Abrir o arquivo data.json para leitura
-            with open("data.json", "r") as file:
+            with open(pathFilesAdd('data.json'), "r") as file:
                 data = json.load(file)
 
             # Pega os valores do input de configuração
@@ -348,7 +348,7 @@ class wConfig:
                             "tabela": self.entryTabela.get()}
             
             # Atualiza o arquivo data.json
-            with open("data.json", "w") as file:
+            with open(pathFilesAdd('data.json'), "w") as file:
                 json.dump(data_update, file)
 
     def reset_data(self):
@@ -365,7 +365,7 @@ class wConfig:
                     "tabela": ""}
             
             # Atualiza o arquivo data.json com os valores vazios
-            with open("data.json", "w") as file:
+            with open(pathFilesAdd('data.json'), "w") as file:
                 json.dump(data, file)
 
             # Limpa os inputs de configuração

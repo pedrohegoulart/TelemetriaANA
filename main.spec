@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('C:/Users/pedro/OneDrive/Área de Trabalho/Juliao/data.json', '.'), ('C:/Users/pedro/OneDrive/Área de Trabalho/Juliao/logfile.log', '.'), ('C:/Users/pedro/OneDrive/Área de Trabalho/Juliao/img/favicon.ico', 'img')],
+    datas=[],
     hiddenimports=['babel.numbers', 'tkcalendar'],
     hookspath=[],
     hooksconfig={},

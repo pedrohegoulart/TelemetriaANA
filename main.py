@@ -2,7 +2,12 @@
 from tkinter import *
 import sys
 import locale
+
+# Funções externas
+from path_utils import pathFilesAdd
 from graph import window
+
+# Ajusta horario
 locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 
 # Funções externas
